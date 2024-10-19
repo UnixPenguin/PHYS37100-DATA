@@ -1,0 +1,31 @@
+const int thermistorPin = A0; // Analog pin for thermistor
+const int potPin = A1;         // Analog pin for potentiometer
+const int heaterPin = 9;       // Digital PWM pin for the heater
+
+void setup() {
+    Serial.begin(9600);
+    pinMode(heaterPin, OUTPUT);
+}
+
+void loop() {
+    
+    int thermistorValue = analogRead(thermistorPin);
+    //Serial.println(thermistorValue);
+    
+    
+    int potValue = analogRead(potPin);
+    
+    
+    int pwmValue = map(potValue, 0, 1023, 0, 255);
+    analogWrite(heaterPin, pwmValue);
+    
+
+    long currentTime = millis();
+    Serial.print(currentTime);
+    Serial.print(",");
+    Serial.print(potValue);
+    Serial.print(",");
+    Serial.println(thermistorValue);
+    
+    delay(200); 
+}
