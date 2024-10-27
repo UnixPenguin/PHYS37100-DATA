@@ -1,4 +1,4 @@
-time,frequncy
+time,frequency
 1,328
 2,336
 3,342
