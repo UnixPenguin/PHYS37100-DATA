@@ -1,4 +1,4 @@
-time,distance,intensity
+time,intensity,distance
 0.001,963,2.70
 0.002,962,3.11
 0.007,962,3.11
